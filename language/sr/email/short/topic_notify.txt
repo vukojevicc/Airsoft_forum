@@ -1,0 +1,20 @@
+Subject: Obaveštenje o odgovoru na temu - "{TOPIC_TITLE}"
+
+Zdravo {USERNAME},
+
+Dobili ste ovaj email jer pratite temu "{TOPIC_TITLE}" na sajtu "{SITENAME}". Na ovu temu je odgovoreno <!-- IF AUTHOR_NAME --> : korisnik {AUTHOR_NAME}<!-- ENDIF --> od Vaše poslednje posete. Možete koristiti sledeći link da pogledate odgovore. Nećete dobijate obaveštenja ubuduće sve dok ponovo ne posetite temu.
+
+Da pogledate najnovije postove od Vaše poslednje posete, kliknite na sledeći link:
+{U_NEWEST_POST}
+
+Ukoliko želite da pogledate temu, kliknite na sledeći link:
+{U_TOPIC}
+
+Ukoliko želite da pogledate forum, kliknite na sledeći link:
+{U_FORUM}
+
+Ukoliko ne želida da primate obaveštenja ubuduće, možete ili da kliknete na link "Prekini praćenje teme" na dnu teme, ili tako što ćete kliknuti na sledeći link:
+
+{U_STOP_WATCHING_TOPIC}
+
+{EMAIL_SIG}

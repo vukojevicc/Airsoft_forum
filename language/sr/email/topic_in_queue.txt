@@ -1,0 +1,13 @@
+Subject: Obaveštenje o uređenju teme - "{TOPIC_TITLE}"
+
+Zdravo {USERNAME},
+
+Dobili ste ovo obaveštenje jer tema "{TOPIC_TITLE}" na sajtu "{SITENAME}" čeka na odobrenje.
+
+Ukoliko želide da pogledate temu, kliknite na sledeći link:
+{U_VIEW_TOPIC}
+
+Ukoliko želide da pogledate forum, kliknite na sledeći link:
+{U_FORUM}
+
+{EMAIL_SIG}

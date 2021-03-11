@@ -1,0 +1,20 @@
+Subject: Obaveštenje od odgovoru na temu - "{TOPIC_TITLE}"
+
+Zdravo {USERNAME},
+
+Doboli ste ovaj email jer je na temi koju ste obeležili, "{TOPIC_TITLE}" na sajtu "{SITENAME}", odgovoreno od Vaše poslednje posete. Možete kliknuti na sledeći link da pogledate odgovore. Ubuduće nećete dobijati nova obaveštenja sve dok ne posetite temu.
+
+Ukoliko želide da pogledate najnoviji post od Vaše poslednje posete, kliknite na sledeći link:
+{U_NEWEST_POST}
+
+Ukoliko želide da pogledate temu, kliknite na sledeći link:
+{U_TOPIC}
+
+Ukoliko želide da pogledate forum, kliknite na sledeći link:
+{U_FORUM}
+
+Ukoliko ne želite da dobijate obaveštenja o odgovorima na temu, molimo Vas da izmenite podešavanja ovde:
+
+{U_NOTIFICATION_SETTINGS}
+
+{EMAIL_SIG}

@@ -1,0 +1,23 @@
+
+Zdravo {TO_USERNAME},
+
+Ovaj email ste dobili putem linka za kontakt administratora sa sajta "{SITENAME}".
+
+<!-- IF S_IS_REGISTERED -->
+Poruka je poslata sa naloga na sajtu.
+Korisnik: {FROM_USERNAME}
+E-mail adresa: {FROM_EMAIL_ADDRESS}
+IP adresa: {FROM_IP_ADDRESS}
+Profil: {U_FROM_PROFILE}
+<!-- ELSE -->
+Poruku je poslao gost sa sledećim kontakt podacima:
+Ime: {FROM_USERNAME}
+E-mail adresa: {FROM_EMAIL_ADDRESS}
+IP adresa: {FROM_IP_ADDRESS}
+<!-- ENDIF -->
+
+
+Evo i poruke koja je poslata:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+{MESSAGE}

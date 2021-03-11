@@ -1,0 +1,13 @@
+Subject: Prijava posta - "{TOPIC_TITLE}"
+
+Zdravo {USERNAME},
+
+Dobili ste ovaj email jer je neko prijavio post "{POST_SUBJECT}" na sajtu "{SITENAME}".
+
+Ukoliko želide da pogledate prijavu, kliknite na sledeći link:
+{U_VIEW_REPORT}
+
+Ukoliko želide da pogledate post, kliknite na sledeći link:
+{U_VIEW_POST}
+
+{EMAIL_SIG}

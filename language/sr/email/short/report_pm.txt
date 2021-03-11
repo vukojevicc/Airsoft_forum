@@ -1,0 +1,10 @@
+Subject: Prijava privatne poruke - "{TOPIC_TITLE}"
+
+Zdravo {USERNAME},
+
+Dobili ste ovaj email jer je privatna poruka sa naslovom "{SUBJECT}" autora "{AUTHOR_NAME}" na sajtu "{SITENAME}" prijavljena.
+
+Ukoliko želite da pogledate prijavu, kliknite na sledeći link:
+{U_VIEW_REPORT}
+
+{EMAIL_SIG}

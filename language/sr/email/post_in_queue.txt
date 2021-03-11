@@ -1,0 +1,13 @@
+Subject: Obaveštenje o uređenju posta - "{TOPIC_TITLE}"
+
+Zdravo {USERNAME},
+
+Dobili ste ovaj email jer post "{POST_SUBJECT}" na sajtu "{SITENAME}" čeka na odobrenje.
+
+Ukoliko želide da pogledate post, kliknite na sledeći link:
+{U_VIEW_POST}
+
+Ukoliko želide da pogledate temu, kliknite na sledeći link:
+{U_TOPIC}
+
+{EMAIL_SIG}
