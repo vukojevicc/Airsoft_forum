@@ -44,13 +44,14 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
 <head>
 <meta charset=\"utf-8\" />
 <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+<meta name=\"google-site-verification\" content=\"i_IWAAHAFYdiovFz5wEGVaVQDl9gX4bhEvB9pjxfN00\" />
 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
 ";
-        // line 7
+        // line 8
         echo ($context["META"] ?? null);
         echo "
 <title>";
-        // line 8
+        // line 9
         if (($context["UNREAD_NOTIFICATIONS_COUNT"] ?? null)) {
             echo "(";
             echo ($context["UNREAD_NOTIFICATIONS_COUNT"] ?? null);
@@ -75,9 +76,9 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
         echo "</title>
 
 ";
-        // line 10
+        // line 11
         if (($context["S_ENABLE_FEEDS"] ?? null)) {
-            // line 11
+            // line 12
             echo "\t";
             if (($context["S_ENABLE_FEEDS_OVERALL"] ?? null)) {
                 echo "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"";
@@ -88,7 +89,7 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
                 echo $this->extensions['phpbb\template\twig\extension\routing']->getPath("phpbb_feed_index");
                 echo "\">";
             }
-            // line 12
+            // line 13
             echo "\t";
             if (($context["S_ENABLE_FEEDS_NEWS"] ?? null)) {
                 echo "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"";
@@ -99,7 +100,7 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
                 echo $this->extensions['phpbb\template\twig\extension\routing']->getPath("phpbb_feed_news");
                 echo "\">";
             }
-            // line 13
+            // line 14
             echo "\t";
             if (($context["S_ENABLE_FEEDS_FORUMS"] ?? null)) {
                 echo "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"";
@@ -110,7 +111,7 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
                 echo $this->extensions['phpbb\template\twig\extension\routing']->getPath("phpbb_feed_forums");
                 echo "\">";
             }
-            // line 14
+            // line 15
             echo "\t";
             if (($context["S_ENABLE_FEEDS_TOPICS"] ?? null)) {
                 echo "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"";
@@ -121,7 +122,7 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
                 echo $this->extensions['phpbb\template\twig\extension\routing']->getPath("phpbb_feed_topics");
                 echo "\">";
             }
-            // line 15
+            // line 16
             echo "\t";
             if (($context["S_ENABLE_FEEDS_TOPICS_ACTIVE"] ?? null)) {
                 echo "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"";
@@ -132,7 +133,7 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
                 echo $this->extensions['phpbb\template\twig\extension\routing']->getPath("phpbb_feed_topics_active");
                 echo "\">";
             }
-            // line 16
+            // line 17
             echo "\t";
             if ((($context["S_ENABLE_FEEDS_FORUM"] ?? null) && ($context["S_FORUM_ID"] ?? null))) {
                 echo "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"";
@@ -145,7 +146,7 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
                 echo $this->extensions['phpbb\template\twig\extension\routing']->getPath("phpbb_feed_forum", ["forum_id" => ($context["S_FORUM_ID"] ?? null)]);
                 echo "\">";
             }
-            // line 17
+            // line 18
             echo "\t";
             if ((($context["S_ENABLE_FEEDS_TOPIC"] ?? null) && ($context["S_TOPIC_ID"] ?? null))) {
                 echo "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"";
@@ -158,21 +159,21 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
                 echo $this->extensions['phpbb\template\twig\extension\routing']->getPath("phpbb_feed_topic", ["topic_id" => ($context["S_TOPIC_ID"] ?? null)]);
                 echo "\">";
             }
-            // line 18
+            // line 19
             echo "\t";
         }
-        // line 20
+        // line 21
         echo "
 ";
-        // line 21
+        // line 22
         if (($context["U_CANONICAL"] ?? null)) {
-            // line 22
+            // line 23
             echo "\t<link rel=\"canonical\" href=\"";
             echo ($context["U_CANONICAL"] ?? null);
             echo "\">
 ";
         }
-        // line 24
+        // line 25
         echo "
 <!--
 \tphpBB style name: prosilver
@@ -182,9 +183,9 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
 -->
 
 ";
-        // line 32
+        // line 33
         if (($context["S_ALLOW_CDN"] ?? null)) {
-            // line 33
+            // line 34
             echo "<script>
 \tWebFontConfig = {
 \t\tgoogle: {
@@ -201,23 +202,23 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
 </script>
 ";
         }
-        // line 48
+        // line 49
         echo "<link href=\"";
         echo ($context["T_FONT_AWESOME_LINK"] ?? null);
         echo "\" rel=\"stylesheet\">
 <link href=\"";
-        // line 49
+        // line 50
         echo ($context["T_STYLESHEET_LINK"] ?? null);
         echo "\" rel=\"stylesheet\">
 <link href=\"";
-        // line 50
+        // line 51
         echo ($context["T_STYLESHEET_LANG_LINK"] ?? null);
         echo "\" rel=\"stylesheet\">
 
 ";
-        // line 52
+        // line 53
         if ((($context["S_CONTENT_DIRECTION"] ?? null) == "rtl")) {
-            // line 53
+            // line 54
             echo "\t<link href=\"";
             echo ($context["T_THEME_PATH"] ?? null);
             echo "/bidi.css?assets_version=";
@@ -225,12 +226,12 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
             echo "\" rel=\"stylesheet\">
 ";
         }
-        // line 55
+        // line 56
         echo "
 ";
-        // line 56
+        // line 57
         if (($context["S_PLUPLOAD"] ?? null)) {
-            // line 57
+            // line 58
             echo "\t<link href=\"";
             echo ($context["T_THEME_PATH"] ?? null);
             echo "/plupload.css?assets_version=";
@@ -238,12 +239,12 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
             echo "\" rel=\"stylesheet\">
 ";
         }
-        // line 59
+        // line 60
         echo "
 ";
-        // line 60
+        // line 61
         if (($context["S_COOKIE_NOTICE"] ?? null)) {
-            // line 61
+            // line 62
             echo "\t<link href=\"";
             echo ($context["T_ASSETS_PATH"] ?? null);
             echo "/cookieconsent/cookieconsent.min.css?assets_version=";
@@ -251,11 +252,11 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
             echo "\" rel=\"stylesheet\">
 ";
         }
-        // line 63
+        // line 64
         echo "
 <!--[if lte IE 9]>
 \t<link href=\"";
-        // line 65
+        // line 66
         echo ($context["T_THEME_PATH"] ?? null);
         echo "/tweaks.css?assets_version=";
         echo ($context["T_ASSETS_VERSION"] ?? null);
@@ -263,19 +264,18 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
 <![endif]-->
 
 ";
-        // line 68
         // line 69
+        // line 70
         echo "
 ";
-        // line 70
-        echo twig_get_attribute($this->env, $this->source, ($context["definition"] ?? null), "STYLESHEETS", [], "any", false, false, false, 70);
+        // line 71
+        echo twig_get_attribute($this->env, $this->source, ($context["definition"] ?? null), "STYLESHEETS", [], "any", false, false, false, 71);
         echo "
 
 ";
-        // line 72
         // line 73
-        echo "
-</head>
+        // line 74
+        echo "</head>
 <body id=\"phpbb\" class=\"nojs notouch section-";
         // line 75
         echo ($context["SCRIPT_NAME"] ?? null);
@@ -446,7 +446,7 @@ class __TwigTemplate_6fd2271df11d47af17d57d1871dfb5d603195092b58d7b193673edcc85b
 
     public function getDebugInfo()
     {
-        return array (  435 => 133,  432 => 132,  422 => 128,  418 => 126,  416 => 125,  411 => 122,  410 => 121,  406 => 119,  393 => 118,  392 => 117,  389 => 116,  388 => 115,  384 => 113,  382 => 112,  374 => 107,  369 => 105,  363 => 104,  358 => 102,  354 => 101,  346 => 100,  341 => 98,  338 => 97,  335 => 96,  334 => 95,  328 => 92,  324 => 91,  320 => 90,  304 => 87,  299 => 84,  298 => 83,  291 => 78,  290 => 77,  281 => 75,  277 => 73,  276 => 72,  271 => 70,  268 => 69,  267 => 68,  259 => 65,  255 => 63,  247 => 61,  245 => 60,  242 => 59,  234 => 57,  232 => 56,  229 => 55,  221 => 53,  219 => 52,  214 => 50,  210 => 49,  205 => 48,  188 => 33,  186 => 32,  176 => 24,  170 => 22,  168 => 21,  165 => 20,  162 => 18,  149 => 17,  136 => 16,  125 => 15,  114 => 14,  103 => 13,  92 => 12,  81 => 11,  79 => 10,  54 => 8,  50 => 7,  40 => 2,  37 => 1,);
+        return array (  435 => 133,  432 => 132,  422 => 128,  418 => 126,  416 => 125,  411 => 122,  410 => 121,  406 => 119,  393 => 118,  392 => 117,  389 => 116,  388 => 115,  384 => 113,  382 => 112,  374 => 107,  369 => 105,  363 => 104,  358 => 102,  354 => 101,  346 => 100,  341 => 98,  338 => 97,  335 => 96,  334 => 95,  328 => 92,  324 => 91,  320 => 90,  304 => 87,  299 => 84,  298 => 83,  291 => 78,  290 => 77,  281 => 75,  278 => 74,  277 => 73,  272 => 71,  269 => 70,  268 => 69,  260 => 66,  256 => 64,  248 => 62,  246 => 61,  243 => 60,  235 => 58,  233 => 57,  230 => 56,  222 => 54,  220 => 53,  215 => 51,  211 => 50,  206 => 49,  189 => 34,  187 => 33,  177 => 25,  171 => 23,  169 => 22,  166 => 21,  163 => 19,  150 => 18,  137 => 17,  126 => 16,  115 => 15,  104 => 14,  93 => 13,  82 => 12,  80 => 11,  55 => 9,  51 => 8,  40 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
