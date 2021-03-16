@@ -38,7 +38,8 @@ if (empty($lang) || !is_array($lang))
 // You do not need this where single placeholders are used, e.g. 'Message %d' is fine
 // equally where a string contains only two placeholders which are used to wrap text
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
-
+// %1$s = The name of your forums
+// %2$s = The URL path of your forums
 // Privacy policy and T&C
 $lang = array_merge($lang, array(
 	'TERMS_OF_USE_CONTENT'	=> 'Pristupanjem na “%1$s” (u daljem tekstu “mi”, “naš”, “%1$s”, “%2$s”), prihvatate uslove navedene u daljem tekstu uslove. Ako se ne slažete sa uslovima molimo vas da ne pristupate i/ili koristite “%1$s”. Mi možemo ove uslove promeniti bilo kada i obavestićemo vas o tome, mada bi bilo mudro da sami proverite regulativnost uslova dok koristite “%1$s”. Posle izmena to znači da prihvatate nove uslove.<br />
