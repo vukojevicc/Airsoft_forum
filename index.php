@@ -48,7 +48,7 @@ if (($mark_notification = $request->variable('mark_notification', 0)))
 		$notification = $phpbb_notifications->load_notifications('notification.method.board', array(
 			'notification_id'	=> $mark_notification,
 		));
-
+                
 		if (isset($notification['notifications'][$mark_notification]))
 		{
 			$notification = $notification['notifications'][$mark_notification];
