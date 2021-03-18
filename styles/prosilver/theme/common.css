@@ -1292,3 +1292,11 @@ ul.linklist:after,
     border-spacing: 20px;
     border-collapse: separate;
 }
+#naslov{
+    font-size: 25px;
+    font-weight: 900;
+}
+#mesec{
+    font-weight: 100;
+    font-size: 15px;
+}
