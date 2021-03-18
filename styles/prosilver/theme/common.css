@@ -1287,3 +1287,8 @@ ul.linklist:after,
 	border-top: none;
 }
 /* Style for custom calendar */
+#kalendar{
+    margin: 20px auto;
+    border-spacing: 20px;
+    border-collapse: separate;
+}

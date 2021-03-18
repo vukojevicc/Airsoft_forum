@@ -1,8 +1,3 @@
-/**
- * @param {int} The month number, 0 based
- * @param {int} The year, not zero based, required to account for leap years
- * @return {Date[]} List with date objects for each day of the month
- */
 var novi_datum = new Date();
 
 function getDaysInMonth(month, year) {
@@ -14,4 +9,8 @@ function getDaysInMonth(month, year) {
   }
   return days;
 }
-getDaysInMonth(novi_datum.getMonth(), novi_datum.getFullYear());
+var dani = getDaysInMonth(novi_datum.getMonth(), novi_datum.getFullYear());
+
+for(let i = 0; i<dani.length; i++){
+        $('#kalendar td')[i].innerHTML = dani[i].getDate();
+}
