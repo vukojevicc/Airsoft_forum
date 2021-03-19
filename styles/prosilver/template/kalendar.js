@@ -10,10 +10,10 @@ function getDaysInMonth(month, year) {
     }
     return days;
 }
-function fill_calendar_table(month) {
+function fill_calendar_table(month, year) {
     if (month != null) {
-        $('#mesec').html(meseci[novi_datum.getMonth() + month] + ' ' + novi_datum.getFullYear());
-        var dani = getDaysInMonth(novi_datum.getMonth() + month, novi_datum.getFullYear());
+        $('#mesec').html(meseci[novi_datum.getMonth() + month] + ' ' + (novi_datum.getFullYear() + year));
+        var dani = getDaysInMonth(novi_datum.getMonth() + month, novi_datum.getFullYear() + year);
     } else {
         $('#mesec').html(meseci[novi_datum.getMonth()] + ' ' + novi_datum.getFullYear());
         var dani = getDaysInMonth(novi_datum.getMonth(), novi_datum.getFullYear());
@@ -37,12 +37,21 @@ function fill_calendar_table(month) {
 fill_calendar_table();
 
 var month_increment = 0;
+var year_increment = 0;
 $('#novi_mesec').on('click', function () {
+    if ($('#mesec').html().includes('Decembar')) {
+        year_increment++;
+        month_increment -= 12;
+    }
     month_increment++;
-    fill_calendar_table(month_increment);
+    fill_calendar_table(month_increment, year_increment);
 })
 
 $('#prethodni_mesec').on('click', function () {
+    if ($('#mesec').html().includes('Januar')) {
+        year_increment--;
+        month_increment = 10;
+    }
     month_increment--;
-    fill_calendar_table(month_increment);
+    fill_calendar_table(month_increment, year_increment);
 })

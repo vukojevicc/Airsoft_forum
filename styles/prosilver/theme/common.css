@@ -1289,14 +1289,34 @@ ul.linklist:after,
 /* Style for custom calendar */
 #kalendar{
     margin: 20px auto;
+    margin-bottom: 0;
     border-spacing: 20px;
     border-collapse: separate;
+    font-size: 15px;
 }
 #naslov{
     font-size: 25px;
     font-weight: 900;
+    margin-bottom: 12px;
 }
 #mesec{
     font-weight: 100;
     font-size: 15px;
+}
+.arrows{
+    font-size: 40px;
+    cursor: pointer;
+    display: inline-block;
+}
+.arrow_parent{
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+    margin-bottom: 25px;
+}
+.righ_arrow{
+    margin-left: 50px;
+}
+.left_arrow{
+    margin-right: 50px;
 }
