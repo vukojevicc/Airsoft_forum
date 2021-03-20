@@ -26,13 +26,35 @@ function fill_calendar_table(month, year) {
             var j = i;
             j += dani[i].getDay();
             for (let i = 0; i < $('#kalendar td').length; i++) {
-                $('#kalendar td')[i].innerHTML = ' ';
+                $('#kalendar td')[i].innerHTML = '';
             }
             jTrue = false;
         }
         $('#kalendar td')[j + 6].innerHTML = dani[i].getDate();
+        if ($('#kalendar td')[j + 6].innerHTML == novi_datum.getDate() && $('#mesec').html().includes(meseci[novi_datum.getMonth()])) {
+            $('#kalendar td')[j + 6].style.border = '1px solid red';
+        } else {
+            $('#kalendar td')[j + 6].style.border = 'none';
+        }
+
         j++;
     }
+    
+    var empty_rows = document.querySelectorAll('.last_two_rows');
+    empty_rows.forEach(function(red){
+        if(red.children[0].innerHTML == ''){
+            red.style.display = 'none';
+        }else{
+            red.style.display = 'table-row';
+        }
+    })
+    
+    if ($('#kalendar td')[6].innerHTML != '') {
+        $('.red')[0].style.display = 'table-row';
+    } else {
+        $('.red')[0].style.display = 'none';
+    }
+
 }
 fill_calendar_table();
 
@@ -43,6 +65,7 @@ $('#novi_mesec').on('click', function () {
         year_increment++;
         month_increment -= 12;
     }
+
     month_increment++;
     fill_calendar_table(month_increment, year_increment);
 })
@@ -52,6 +75,8 @@ $('#prethodni_mesec').on('click', function () {
         year_increment--;
         month_increment = 10;
     }
+
     month_increment--;
     fill_calendar_table(month_increment, year_increment);
-})
+}
+)

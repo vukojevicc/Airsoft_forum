@@ -59,7 +59,7 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr class="red">
+            <tr class="red last_two_rows">
                 <td></td>
                 <td></td>
                 <td></td>
@@ -68,7 +68,7 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr class="red">
+            <tr class="red last_two_rows">
                 <td></td>
                 <td></td>
                 <td></td>
