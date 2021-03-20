@@ -31,10 +31,12 @@ function fill_calendar_table(month, year) {
             }
             jTrue = false;
         }
+        
         $('#kalendar td')[j + 6].innerHTML = dani[i].getDate() + '<span class="tooltiptext">test</span>';
-        if ($('#kalendar td')[j + 6].innerHTML.includes(novi_datum.getDate()) 
-                && $('#mesec').html().includes(meseci[novi_datum.getMonth()])
-                && $('#mesec').html().includes(novi_datum.getFullYear())) {
+        
+        if ($('#kalendar td')[j + 6].innerText == novi_datum.getDate()
+                && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
+                && $('#mesec').text().includes(novi_datum.getFullYear())) {
             $('#kalendar td')[j + 6].style.border = '1px solid red';
         } else {
             $('#kalendar td')[j + 6].style.border = 'none';

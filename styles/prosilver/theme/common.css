@@ -1372,8 +1372,8 @@ ul.linklist:after,
     text-align: center;
 }
 .novi_susret input,
-textarea,
-label{
+.novi_susret textarea,
+.novi_susret label{
     margin-bottom: 20px;
     padding: 10px;
     font-size: 20px;
