@@ -26,12 +26,15 @@ function fill_calendar_table(month, year) {
             var j = i;
             j += dani[i].getDay();
             for (let i = 0; i < $('#kalendar td').length; i++) {
+                $('#kalendar td')[i].classList.add('tooltip');
                 $('#kalendar td')[i].innerHTML = '';
             }
             jTrue = false;
         }
-        $('#kalendar td')[j + 6].innerHTML = dani[i].getDate();
-        if ($('#kalendar td')[j + 6].innerHTML == novi_datum.getDate() && $('#mesec').html().includes(meseci[novi_datum.getMonth()])) {
+        $('#kalendar td')[j + 6].innerHTML = dani[i].getDate() + '<span class="tooltiptext">test</span>';
+        if ($('#kalendar td')[j + 6].innerHTML.includes(novi_datum.getDate()) 
+                && $('#mesec').html().includes(meseci[novi_datum.getMonth()])
+                && $('#mesec').html().includes(novi_datum.getFullYear())) {
             $('#kalendar td')[j + 6].style.border = '1px solid red';
         } else {
             $('#kalendar td')[j + 6].style.border = 'none';
