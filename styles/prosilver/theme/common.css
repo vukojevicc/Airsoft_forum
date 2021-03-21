@@ -1375,11 +1375,9 @@ ul.linklist:after,
 .novi_susret textarea,
 .novi_susret label{
     margin-bottom: 20px;
-    padding: 10px;
-    font-size: 20px;
+    font-size: 12px;
 }
 .novi_susret textarea{
-    font-size: 15px;
     padding: 10px;
 }
 input[type='date']{

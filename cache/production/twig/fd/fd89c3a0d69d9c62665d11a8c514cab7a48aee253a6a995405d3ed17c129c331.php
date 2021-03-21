@@ -199,12 +199,6 @@ class __TwigTemplate_4287688768e3f4b9ab4fc97156004018e22133c60306cb22ed720be6469
         echo "\"></script>
 ";
         // line 68
-        if (($context["S_INDEX"] ?? null)) {
-            // line 69
-            echo "<script src=\"styles/prosilver/template/kalendar.js\"></script>
-";
-        }
-        // line 71
         if (($context["S_ALLOW_CDN"] ?? null)) {
             echo "<script>window.jQuery || document.write('\\x3Cscript src=\"";
             echo ($context["T_ASSETS_PATH"] ?? null);
@@ -212,14 +206,14 @@ class __TwigTemplate_4287688768e3f4b9ab4fc97156004018e22133c60306cb22ed720be6469
             echo ($context["T_ASSETS_VERSION"] ?? null);
             echo "\">\\x3C/script>');</script>";
         }
-        // line 72
+        // line 69
         echo "<script src=\"";
         echo ($context["T_ASSETS_PATH"] ?? null);
         echo "/javascript/core.js?assets_version=";
         echo ($context["T_ASSETS_VERSION"] ?? null);
         echo "\"></script>
 ";
-        // line 73
+        // line 70
         $asset_file = "forum_fn.js";
         $asset = new \phpbb\template\asset($asset_file, $this->env->get_path_helper(), $this->env->get_filesystem());
         if (substr($asset_file, 0, 2) !== './' && $asset->is_relative()) {
@@ -233,7 +227,7 @@ class __TwigTemplate_4287688768e3f4b9ab4fc97156004018e22133c60306cb22ed720be6469
         if ($asset->is_relative()) {
             $asset->add_assets_version($this->env->get_phpbb_config()['assets_version']);
         }
-        $this->env->get_assets_bag()->add_script($asset);        // line 74
+        $this->env->get_assets_bag()->add_script($asset);        // line 71
         $asset_file = "ajax.js";
         $asset = new \phpbb\template\asset($asset_file, $this->env->get_path_helper(), $this->env->get_filesystem());
         if (substr($asset_file, 0, 2) !== './' && $asset->is_relative()) {
@@ -247,16 +241,16 @@ class __TwigTemplate_4287688768e3f4b9ab4fc97156004018e22133c60306cb22ed720be6469
         if ($asset->is_relative()) {
             $asset->add_assets_version($this->env->get_phpbb_config()['assets_version']);
         }
-        $this->env->get_assets_bag()->add_script($asset);        // line 75
+        $this->env->get_assets_bag()->add_script($asset);        // line 72
         if (($context["S_ALLOW_CDN"] ?? null)) {
-            // line 76
+            // line 73
             echo "\t<script>
 \t\t(function(\$){
 \t\t\tvar \$fa_cdn = \$('head').find('link[rel=\"stylesheet\"]').first(),
 \t\t\t\t\$span = \$('<span class=\"fa\" style=\"display:none\"></span>').appendTo('body');
 \t\t\tif (\$span.css('fontFamily') !== 'FontAwesome' ) {
 \t\t\t\t\$fa_cdn.after('<link href=\"";
-            // line 81
+            // line 78
             echo ($context["T_ASSETS_PATH"] ?? null);
             echo "/css/font-awesome.min.css\" rel=\"stylesheet\">');
 \t\t\t\t\$fa_cdn.remove();
@@ -266,12 +260,12 @@ class __TwigTemplate_4287688768e3f4b9ab4fc97156004018e22133c60306cb22ed720be6469
 \t</script>
 ";
         }
-        // line 88
+        // line 85
         echo "
 ";
-        // line 89
+        // line 86
         if (($context["S_COOKIE_NOTICE"] ?? null)) {
-            // line 90
+            // line 87
             echo "\t<script src=\"";
             echo ($context["T_ASSETS_PATH"] ?? null);
             echo "/cookieconsent/cookieconsent.min.js?assets_version=";
@@ -292,19 +286,19 @@ class __TwigTemplate_4287688768e3f4b9ab4fc97156004018e22133c60306cb22ed720be6469
 \t\t\t\t\t\"theme\": \"classic\",
 \t\t\t\t\t\"content\": {
 \t\t\t\t\t\t\"message\": \"";
-            // line 105
+            // line 102
             echo twig_escape_filter($this->env, $this->extensions['phpbb\template\twig\extension']->lang("COOKIE_CONSENT_MSG"), "js");
             echo "\",
 \t\t\t\t\t\t\"dismiss\": \"";
-            // line 106
+            // line 103
             echo twig_escape_filter($this->env, $this->extensions['phpbb\template\twig\extension']->lang("COOKIE_CONSENT_OK"), "js");
             echo "\",
 \t\t\t\t\t\t\"link\": \"";
-            // line 107
+            // line 104
             echo twig_escape_filter($this->env, $this->extensions['phpbb\template\twig\extension']->lang("COOKIE_CONSENT_INFO"), "js");
             echo "\",
 \t\t\t\t\t\t\"href\": \"";
-            // line 108
+            // line 105
             echo ($context["UA_PRIVACY"] ?? null);
             echo "\"
 \t\t\t\t\t}
@@ -314,18 +308,18 @@ class __TwigTemplate_4287688768e3f4b9ab4fc97156004018e22133c60306cb22ed720be6469
 \t</script>
 ";
         }
-        // line 115
+        // line 112
         echo "
 ";
-        // line 116
+        // line 113
         $previous_look_up_order = $this->env->getNamespaceLookUpOrder();
         $this->env->setNamespaceLookUpOrder(array('phpbb_viglink', '__main__'));
         $this->env->loadTemplate('@phpbb_viglink/event/overall_footer_after.html')->display($context);
         $this->env->setNamespaceLookUpOrder($previous_look_up_order);
-        // line 117
+        // line 114
         echo "
 ";
-        // line 118
+        // line 115
         if (($context["S_PLUPLOAD"] ?? null)) {
             $location = "plupload.html";
             $namespace = false;
@@ -334,18 +328,18 @@ class __TwigTemplate_4287688768e3f4b9ab4fc97156004018e22133c60306cb22ed720be6469
                 $previous_look_up_order = $this->env->getNamespaceLookUpOrder();
                 $this->env->setNamespaceLookUpOrder(array($namespace, '__main__'));
             }
-            $this->loadTemplate("plupload.html", "overall_footer.html", 118)->display($context);
+            $this->loadTemplate("plupload.html", "overall_footer.html", 115)->display($context);
             if ($namespace) {
                 $this->env->setNamespaceLookUpOrder($previous_look_up_order);
             }
         }
-        // line 119
-        echo twig_get_attribute($this->env, $this->source, ($context["definition"] ?? null), "SCRIPTS", [], "any", false, false, false, 119);
+        // line 116
+        echo twig_get_attribute($this->env, $this->source, ($context["definition"] ?? null), "SCRIPTS", [], "any", false, false, false, 116);
         echo "
 
 ";
-        // line 121
-        // line 122
+        // line 118
+        // line 119
         echo "
 </body>
 </html>
@@ -364,7 +358,7 @@ class __TwigTemplate_4287688768e3f4b9ab4fc97156004018e22133c60306cb22ed720be6469
 
     public function getDebugInfo()
     {
-        return array (  349 => 122,  348 => 121,  343 => 119,  329 => 118,  326 => 117,  321 => 116,  318 => 115,  308 => 108,  304 => 107,  300 => 106,  296 => 105,  275 => 90,  273 => 89,  270 => 88,  260 => 81,  253 => 76,  251 => 75,  237 => 74,  223 => 73,  216 => 72,  208 => 71,  204 => 69,  202 => 68,  198 => 67,  194 => 65,  190 => 64,  167 => 46,  152 => 42,  148 => 40,  140 => 37,  137 => 36,  134 => 35,  128 => 32,  125 => 31,  123 => 30,  117 => 27,  111 => 26,  105 => 23,  99 => 22,  96 => 21,  94 => 20,  88 => 17,  85 => 16,  83 => 15,  78 => 13,  75 => 12,  74 => 11,  70 => 9,  58 => 8,  55 => 7,  45 => 5,  43 => 4,  42 => 3,  39 => 2,  37 => 1,);
+        return array (  343 => 119,  342 => 118,  337 => 116,  323 => 115,  320 => 114,  315 => 113,  312 => 112,  302 => 105,  298 => 104,  294 => 103,  290 => 102,  269 => 87,  267 => 86,  264 => 85,  254 => 78,  247 => 73,  245 => 72,  231 => 71,  217 => 70,  210 => 69,  202 => 68,  198 => 67,  194 => 65,  190 => 64,  167 => 46,  152 => 42,  148 => 40,  140 => 37,  137 => 36,  134 => 35,  128 => 32,  125 => 31,  123 => 30,  117 => 27,  111 => 26,  105 => 23,  99 => 22,  96 => 21,  94 => 20,  88 => 17,  85 => 16,  83 => 15,  78 => 13,  75 => 12,  74 => 11,  70 => 9,  58 => 8,  55 => 7,  45 => 5,  43 => 4,  42 => 3,  39 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
