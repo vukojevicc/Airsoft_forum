@@ -100,15 +100,13 @@
 require_once __DIR__ . '/tabele/susret.php';
 
 $susreti = Susret::izlistajSusrete();
-//        var_dump($susreti);
-?>
-    var opis = <?php
-foreach ($susreti as $key => $value) {
-    $unix = strtotime($value->datum_susreta);
-    echo (int) date('m', $unix) - 1;
+if (isset($_GET['susret'])) {
+    ?>
+        alert('Sva polja moraju biti popunjena.');
+    <?php
 }
-?>;
-    console.log(opis);
+?>
+    console.log(<?php $auth->acl_get('a_'); ?>);
     var novi_datum = new Date();
     var meseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
 
@@ -137,23 +135,38 @@ foreach ($susreti as $key => $value) {
                 var j = i;
                 j += dani[i].getDay();
                 for (let i = 0; i < $('#kalendar td').length; i++) {
-                    $('#kalendar td')[i].classList.add('tooltip');
                     $('#kalendar td')[i].innerHTML = '';
+                    $('#kalendar td')[i].classList.remove('tooltip');
                 }
                 jTrue = false;
             }
+            // Ubacivanje datuma u kalendar
+            $('#kalendar td')[j + 6].innerHTML = dani[i].getDate() + '<span class="tooltiptext"></span>';
 
-            $('#kalendar td')[j + 6].innerHTML = dani[i].getDate() + '<span class="tooltiptext">Nema susreta</span>';
+            // Vracanje boje celijama koje nemaju susret u narednom mesecu
+            $('#kalendar td')[j + 6].style.color = '#536482';
 
             // Dodeljivanje crvenog okvira danasnjem datumu
             if ($('#kalendar td')[j + 6].innerText == novi_datum.getDate()
                     && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
                     && $('#mesec').text().includes(novi_datum.getFullYear())) {
                 $('#kalendar td')[j + 6].style.border = '1px solid red';
-                $('#kalendar td')[j + 6].children[0].innerText = 'hej';
             } else {
                 $('#kalendar td')[j + 6].style.border = 'none';
             }
+            // Ubacivanje susreta u datume
+<?php
+foreach ($susreti as $kljuc => $vrednost):
+    $unix = strtotime($vrednost->datum_susreta);
+    ?>
+                if ($('#kalendar td')[j + 6].innerText == <?php echo (int) date('d', $unix); ?>
+                && $('#mesec').text().includes(meseci[<?php echo (int) date('m', $unix) - 1; ?>])
+                        && $('#mesec').text().includes(<?php echo (int) date('Y', $unix); ?>)) {
+                    $('#kalendar td')[j + 6].children[0].innerHTML += '<?php echo $vrednost->opis_susreta ?>' + '<hr>';
+                    $('#kalendar td')[j + 6].style.color = 'red';
+                    $('#kalendar td')[j + 6].classList.add('tooltip');
+                }
+<?php endforeach; ?>
 
             j++;
         }
