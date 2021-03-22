@@ -106,7 +106,6 @@ if (isset($_GET['susret'])) {
     <?php
 }
 ?>
-    console.log(<?php $auth->acl_get('a_'); ?>);
     var novi_datum = new Date();
     var meseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
 
