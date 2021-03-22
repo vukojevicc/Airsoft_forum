@@ -83,6 +83,7 @@
         <div id="prethodni_mesec" class="arrows left_arrow">&laquo;</div>
         <div id="novi_mesec" class="arrows righ_arrow">&raquo;</div>
     </div>
+    <button id="novi_susret">Novi susret <span>&DownArrow;</span></button>
     <div class="novi_susret">
         <form method="post" action="styles/prosilver/template/logika/unesisusret.php">
             <h2>Novi susret</h2><br>
@@ -93,7 +94,21 @@
         </form>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+<?php
+require_once __DIR__ . '/tabele/susret.php';
+
+$susreti = Susret::izlistajSusrete();
+//        var_dump($susreti);
+?>
+    var opis = <?php
+foreach ($susreti as $key => $value) {
+    $unix = strtotime($value->datum_susreta);
+    echo (int) date('m', $unix) - 1;
+}
+?>;
+    console.log(opis);
     var novi_datum = new Date();
     var meseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
 
@@ -128,12 +143,14 @@
                 jTrue = false;
             }
 
-            $('#kalendar td')[j + 6].innerHTML = dani[i].getDate() + '<span class="tooltiptext"></span>';
+            $('#kalendar td')[j + 6].innerHTML = dani[i].getDate() + '<span class="tooltiptext">Nema susreta</span>';
 
+            // Dodeljivanje crvenog okvira danasnjem datumu
             if ($('#kalendar td')[j + 6].innerText == novi_datum.getDate()
                     && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
                     && $('#mesec').text().includes(novi_datum.getFullYear())) {
                 $('#kalendar td')[j + 6].style.border = '1px solid red';
+                $('#kalendar td')[j + 6].children[0].innerText = 'hej';
             } else {
                 $('#kalendar td')[j + 6].style.border = 'none';
             }
@@ -181,5 +198,19 @@
         fill_calendar_table(month_increment, year_increment);
     }
     )
+
+    var newEventClicked = true;
+    $('#novi_susret').on('click', function () {
+
+        if (newEventClicked) {
+            $(this).html('Novi susret <span>&#8593;</span>');
+            newEventClicked = false;
+        } else {
+            $(this).html('Novi susret <span>&#8595;</span>');
+            newEventClicked = true;
+        }
+
+        $('.novi_susret').slideToggle();
+    })
 </script>
 

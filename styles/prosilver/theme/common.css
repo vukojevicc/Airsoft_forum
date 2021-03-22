@@ -1379,6 +1379,8 @@ ul.linklist:after,
 }
 .novi_susret textarea{
     padding: 10px;
+    max-width: 300px;
+    border: 1px solid gray;
 }
 input[type='date']{
     margin-top: 15px;
@@ -1387,6 +1389,26 @@ input[type='date']{
     font-size: 30px;
     color: #536482;
 }
+.novi_susret{
+    display: none;
+}
 td{
     cursor: default;
+}
+#novi_susret{
+    padding: 7px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    border: 1px solid #666666;
+    font-size: 15px;
+    background-image: linear-gradient(to bottom, #D2D2D2 0%,#EFEFEF 100%);
+    outline: none;
+}
+#novi_susret:hover{
+    border-color: #D31141;
+    color: #D31141;
+    background-color: #D2D2D2;
+    background-image: -webkit-linear-gradient(top, #EFEFEF 0%, #D2D2D2 100%);
+    background-image: linear-gradient(to bottom, #EFEFEF 0%,#D2D2D2 100%);
 }
