@@ -1338,9 +1338,8 @@ ul.linklist:after,
   background-color: black;
   color: #fff;
   text-align: center;
-  padding: 5px 0;
-  padding-bottom: 0;
   border-radius: 6px;
+  padding: 5px 2px;
   position: absolute;
   z-index: 1;
   
@@ -1372,6 +1371,9 @@ ul.linklist:after,
 .novi_susret form{
     text-align: center;
 }
+.novi_susret input[type='submit']{
+    padding: 5px;
+}
 .novi_susret input,
 .novi_susret textarea,
 .novi_susret label{
@@ -1383,8 +1385,11 @@ ul.linklist:after,
     max-width: 300px;
     border: 1px solid gray;
 }
-input[type='date']{
+.novi_susret input[type='date']{
     margin-top: 15px;
+}
+.novi_susret input[type='password']{
+    padding: 10px;
 }
 .novi_susret h2{
     font-size: 30px;
@@ -1414,5 +1419,5 @@ td{
     background-image: linear-gradient(to bottom, #EFEFEF 0%,#D2D2D2 100%);
 }
 hr{
-    margin-bottom: 0;
+    margin: 5px 0;
 }

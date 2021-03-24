@@ -90,139 +90,153 @@
             <label for="datum">Unesite datum susreta:</label><br>
             <input type="date" id="datum" name="datum"><br>
             <textarea rows="2" cols="50" placeholder="Unesite opis susreta" name="opis"></textarea><br>
+            <input type="password" name="sifra" placeholder="Unesite lozinku"><br>
             <input type="submit" value="Evidentiraj susret">
         </form>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+    $(document).ready(function () {
 <?php
 require_once __DIR__ . '/tabele/susret.php';
 
 $susreti = Susret::izlistajSusrete();
 if (isset($_GET['susret'])) {
     ?>
-        alert('Sva polja moraju biti popunjena.');
+            alert('Sva polja moraju biti popunjena.');
+    <?php
+}
+if (isset($_GET['sifra'])) {
+    ?>
+            alert('Netačna lozinka');
     <?php
 }
 ?>
-    var novi_datum = new Date();
-    var meseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
+        var novi_datum = new Date();
+        var meseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
 
-    function getDaysInMonth(month, year) {
-        var date = new Date(year, month);
-        var days = [];
-        while (date.getMonth() === month) {
-            days.push(new Date(date));
-            date.setDate(date.getDate() + 1);
-        }
-        return days;
-    }
-    function fill_calendar_table(month, year) {
-        if (month != null) {
-            $('#mesec').html(meseci[novi_datum.getMonth() + month] + ' ' + (novi_datum.getFullYear() + year));
-            var dani = getDaysInMonth(novi_datum.getMonth() + month, novi_datum.getFullYear() + year);
-        } else {
-            $('#mesec').html(meseci[novi_datum.getMonth()] + ' ' + novi_datum.getFullYear());
-            var dani = getDaysInMonth(novi_datum.getMonth(), novi_datum.getFullYear());
-        }
-
-        var jTrue = true;
-
-        for (let i = 0; i < dani.length; i++) {
-            if (jTrue) {
-                var j = i;
-                j += dani[i].getDay();
-                for (let i = 0; i < $('#kalendar td').length; i++) {
-                    $('#kalendar td')[i].innerHTML = '';
-                    $('#kalendar td')[i].classList.remove('tooltip');
-                }
-                jTrue = false;
+        function getDaysInMonth(month, year) {
+            var date = new Date(year, month);
+            var days = [];
+            while (date.getMonth() === month) {
+                days.push(new Date(date));
+                date.setDate(date.getDate() + 1);
             }
-            // Ubacivanje datuma u kalendar
-            $('#kalendar td')[j + 6].innerHTML = dani[i].getDate() + '<span class="tooltiptext"></span>';
-
-            // Vracanje boje celijama koje nemaju susret u narednom mesecu
-            $('#kalendar td')[j + 6].style.color = '#536482';
-
-            // Dodeljivanje crvenog okvira danasnjem datumu
-            if ($('#kalendar td')[j + 6].innerText == novi_datum.getDate()
-                    && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
-                    && $('#mesec').text().includes(novi_datum.getFullYear())) {
-                $('#kalendar td')[j + 6].style.border = '1px solid red';
+            return days;
+        }
+        function fill_calendar_table(month, year) {
+            if (month != null) {
+                $('#mesec').html(meseci[novi_datum.getMonth() + month] + ' ' + (novi_datum.getFullYear() + year));
+                var dani = getDaysInMonth(novi_datum.getMonth() + month, novi_datum.getFullYear() + year);
             } else {
-                $('#kalendar td')[j + 6].style.border = 'none';
+                $('#mesec').html(meseci[novi_datum.getMonth()] + ' ' + novi_datum.getFullYear());
+                var dani = getDaysInMonth(novi_datum.getMonth(), novi_datum.getFullYear());
             }
-            // Ubacivanje susreta u datume
+
+            var jTrue = true;
+
+            for (let i = 0; i < dani.length; i++) {
+                if (jTrue) {
+                    var j = i;
+                    j += dani[i].getDay();
+                    for (let i = 0; i < $('#kalendar td').length; i++) {
+                        $('#kalendar td')[i].innerHTML = '';
+                        $('#kalendar td')[i].classList.remove('tooltip');
+                    }
+                    jTrue = false;
+                }
+                // Ubacivanje datuma u kalendar
+                $('#kalendar td')[j + 6].innerHTML = dani[i].getDate() + '<span></span>';
+
+                // Vracanje boje celijama koje nemaju susret u narednom mesecu
+                $('#kalendar td')[j + 6].style.color = '#536482';
+
+                // Dodeljivanje crvenog okvira danasnjem datumu
+                if ($('#kalendar td')[j + 6].innerText == novi_datum.getDate()
+                        && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
+                        && $('#mesec').text().includes(novi_datum.getFullYear())) {
+                    $('#kalendar td')[j + 6].style.border = '1px solid red';
+                } else {
+                    $('#kalendar td')[j + 6].style.border = 'none';
+                }
+                // Ubacivanje susreta u datume
 <?php
 foreach ($susreti as $kljuc => $vrednost):
     $unix = strtotime($vrednost->datum_susreta);
     ?>
-                if ($('#kalendar td')[j + 6].innerText == <?php echo (int) date('d', $unix); ?>
-                && $('#mesec').text().includes(meseci[<?php echo (int) date('m', $unix) - 1; ?>])
-                        && $('#mesec').text().includes(<?php echo (int) date('Y', $unix); ?>)) {
-                    $('#kalendar td')[j + 6].children[0].innerHTML += '<?php echo $vrednost->opis_susreta ?>' + '<hr>';
-                    $('#kalendar td')[j + 6].style.color = 'red';
-                    $('#kalendar td')[j + 6].classList.add('tooltip');
-                }
+                    if ($('#kalendar td')[j + 6].innerText == <?php echo (int) date('d', $unix); ?>
+                    && $('#mesec').text().includes(meseci[<?php echo (int) date('m', $unix) - 1; ?>])
+                            && $('#mesec').text().includes(<?php echo (int) date('Y', $unix); ?>)) {
+                        $('#kalendar td')[j + 6].children[0].innerHTML += '<?php echo $vrednost->opis_susreta ?>' + '<hr>';
+                        $('#kalendar td')[j + 6].children[0].classList.add('tooltiptext');
+                        $('#kalendar td')[j + 6].style.color = 'red';
+                        $('#kalendar td')[j + 6].classList.add('tooltip');
+                    }
 <?php endforeach; ?>
 
-            j++;
-        }
-
-        var empty_rows = document.querySelectorAll('.last_two_rows');
-        empty_rows.forEach(function (red) {
-            if (red.children[0].innerHTML == '') {
-                red.style.display = 'none';
-            } else {
-                red.style.display = 'table-row';
+                j++;
             }
+            // Brisanje poslednje horizontalne linije
+            var toolTipText = document.querySelectorAll('.tooltiptext');
+            toolTipText.forEach(function (span) {
+                span.children[span.children.length - 1].remove();
+            })
+
+            var empty_rows = document.querySelectorAll('.last_two_rows');
+            empty_rows.forEach(function (red) {
+                if (red.children[0].innerHTML == '') {
+                    red.style.display = 'none';
+                } else {
+                    red.style.display = 'table-row';
+                }
+            })
+
+            if ($('#kalendar td')[6].innerHTML != '') {
+                $('.red')[0].style.display = 'table-row';
+            } else {
+                $('.red')[0].style.display = 'none';
+            }
+
+        }
+        fill_calendar_table();
+
+        var month_increment = 0;
+        var year_increment = 0;
+        $('#novi_mesec').on('click', function () {
+            if ($('#mesec').html().includes(meseci[11])) {
+                year_increment++;
+                month_increment -= 12;
+            }
+
+            month_increment++;
+            fill_calendar_table(month_increment, year_increment);
         })
 
-        if ($('#kalendar td')[6].innerHTML != '') {
-            $('.red')[0].style.display = 'table-row';
-        } else {
-            $('.red')[0].style.display = 'none';
+        $('#prethodni_mesec').on('click', function () {
+            if ($('#mesec').html().includes(meseci[0])) {
+                year_increment--;
+                month_increment = 10;
+            }
+
+            month_increment--;
+            fill_calendar_table(month_increment, year_increment);
         }
+        )
 
-    }
-    fill_calendar_table();
+        var newEventClicked = true;
+        $('#novi_susret').on('click', function () {
 
-    var month_increment = 0;
-    var year_increment = 0;
-    $('#novi_mesec').on('click', function () {
-        if ($('#mesec').html().includes(meseci[11])) {
-            year_increment++;
-            month_increment -= 12;
-        }
+            if (newEventClicked) {
+                $(this).html('Novi susret <span>&#8593;</span>');
+                newEventClicked = false;
+            } else {
+                $(this).html('Novi susret <span>&#8595;</span>');
+                newEventClicked = true;
+            }
 
-        month_increment++;
-        fill_calendar_table(month_increment, year_increment);
-    })
-
-    $('#prethodni_mesec').on('click', function () {
-        if ($('#mesec').html().includes(meseci[0])) {
-            year_increment--;
-            month_increment = 10;
-        }
-
-        month_increment--;
-        fill_calendar_table(month_increment, year_increment);
-    }
-    )
-
-    var newEventClicked = true;
-    $('#novi_susret').on('click', function () {
-
-        if (newEventClicked) {
-            $(this).html('Novi susret <span>&#8593;</span>');
-            newEventClicked = false;
-        } else {
-            $(this).html('Novi susret <span>&#8595;</span>');
-            newEventClicked = true;
-        }
-
-        $('.novi_susret').slideToggle();
+            $('.novi_susret').slideToggle();
+        })
     })
 </script>
 
