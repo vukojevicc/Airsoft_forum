@@ -4,7 +4,7 @@ $sifra = 'airsoftforum2021';
 if ($_POST['opis'] == null || $_POST['datum'] == null) {
     header('Location: ../../../../index.php?susret=false');
     die();
-} elseif ($_POST['sifra'] != $sifra) {
+} elseif (!isset($_POST['sifra']) || $_POST['sifra'] != $sifra) {
     header('Location: ../../../../index.php?sifra=false');
     die();
 }
