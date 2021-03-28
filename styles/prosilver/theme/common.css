@@ -1298,7 +1298,7 @@ ul.linklist:after,
     padding: 5px;
     text-align: center;
 }
-#naslov{
+.naslov{
     font-size: 25px;
     font-weight: 900;
     margin-bottom: 12px;
@@ -1306,8 +1306,7 @@ ul.linklist:after,
 .red:first-of-type{
     display: none;
 }
-#mesec{
-    font-weight: 100;
+.mesec{
     font-size: 15px;
     margin-bottom: 12px;
 }
@@ -1421,4 +1420,8 @@ td{
 }
 hr{
     margin: 5px 0;
+}
+.tooltiptext div{
+/*    border-bottom: 1px solid white;*/
+    padding: 2.5px 0;
 }

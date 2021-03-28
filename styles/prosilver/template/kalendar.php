@@ -1,7 +1,7 @@
 <div class="calendar_parent">
     <table id="kalendar">
-        <caption id="naslov">Susreti</caption>
-        <caption id="mesec"></caption>
+        <caption id="naslov" class="naslov">Susreti</caption>
+        <caption id="mesec" class="mesec"></caption>
         <thead>
             <tr>
                 <th>p</th>
@@ -168,7 +168,7 @@ foreach ($susreti as $kljuc => $vrednost):
                     if ($('#kalendar td')[j + 6].innerText == <?php echo (int) date('d', $unix); ?>
                     && $('#mesec').text().includes(meseci[<?php echo (int) date('m', $unix) - 1; ?>])
                             && $('#mesec').text().includes(<?php echo (int) date('Y', $unix); ?>)) {
-                        $('#kalendar td')[j + 6].children[0].innerHTML += '<?php echo $vrednost->opis_susreta ?>' + '<hr>';
+                        $('#kalendar td')[j + 6].children[0].innerHTML += '<div>' + '* ' + '<?php echo $vrednost->opis_susreta ?>' + '</div>';
                         $('#kalendar td')[j + 6].children[0].classList.add('tooltiptext');
                         $('#kalendar td')[j + 6].style.color = 'red';
                         $('#kalendar td')[j + 6].classList.add('tooltip');
@@ -177,11 +177,11 @@ foreach ($susreti as $kljuc => $vrednost):
 
                 j++;
             }
-            // Brisanje poslednje horizontalne linije
-            var toolTipText = document.querySelectorAll('.tooltiptext');
-            toolTipText.forEach(function (span) {
-                span.children[span.children.length - 1].remove();
-            })
+            // Brisanje poslednjeg bordera
+//            var toolTipText = document.querySelectorAll('.tooltiptext');
+//            toolTipText.forEach(function (span) {
+//                span.children[span.children.length - 1].style.border = 'none';
+//            })
 
             var empty_rows = document.querySelectorAll('.last_two_rows');
             empty_rows.forEach(function (red) {
