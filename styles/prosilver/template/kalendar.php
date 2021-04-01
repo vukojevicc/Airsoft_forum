@@ -153,12 +153,12 @@ if (isset($_GET['sifra'])) {
                 $('#kalendar td')[j + 6].style.color = '#536482';
 
                 // Dodeljivanje crvenog okvira danasnjem datumu
-                if ($('#kalendar td')[j + 6].innerText == novi_datum.getDate()
+                if ($('#kalendar td')[i].innerText == novi_datum.getDate()
                         && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
                         && $('#mesec').text().includes(novi_datum.getFullYear())) {
-                    $('#kalendar td')[j + 6].style.border = '1px solid red';
+                    $('#kalendar td')[i].style.border = '1px solid red';
                 } else {
-                    $('#kalendar td')[j + 6].style.border = 'none';
+                    $('#kalendar td')[i].style.border = 'none';
                 }
                 // Ubacivanje susreta u datume
 <?php
@@ -205,18 +205,17 @@ foreach ($susreti as $kljuc => $vrednost):
         var year_increment = 0;
         $('#novi_mesec').on('click', function () {
             if ($('#mesec').html().includes(meseci[11])) {
+                month_increment -= month_increment + novi_datum.getMonth() + 1;
                 year_increment++;
-                month_increment -= 12;
             }
-
             month_increment++;
             fill_calendar_table(month_increment, year_increment);
         })
 
         $('#prethodni_mesec').on('click', function () {
             if ($('#mesec').html().includes(meseci[0])) {
+                month_increment += 12;
                 year_increment--;
-                month_increment = 10;
             }
 
             month_increment--;
