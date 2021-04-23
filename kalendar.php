@@ -113,7 +113,7 @@ if (isset($_GET['sifra'])) {
     <?php
 }
 ?>
-        var novi_datum = new Date(2021, 4, 5);
+        var novi_datum = new Date();
         var meseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
 
         function getDaysInMonth(month, year) {
@@ -168,7 +168,7 @@ foreach ($susreti as $kljuc => $vrednost):
                     if ($('#kalendar td')[j + 6].innerText == <?php echo (int) date('d', $unix); ?>
                     && $('#mesec').text().includes(meseci[<?php echo (int) date('m', $unix) - 1; ?>])
                             && $('#mesec').text().includes(<?php echo (int) date('Y', $unix); ?>)) {
-                        $('#kalendar td')[j + 6].children[0].innerHTML += '<div>' + '<p>' + '* ' + '<?php echo $vrednost->opis_susreta ?>' + '</p' + '</div>';
+                        $('#kalendar td')[j + 6].children[0].innerHTML += '<div>' + '* ' + '<?php echo $vrednost->opis_susreta ?>' + '</div>';
                         $('#kalendar td')[j + 6].children[0].classList.add('tooltiptext');
                         $('#kalendar td')[j + 6].style.color = 'red';
                         $('#kalendar td')[j + 6].classList.add('tooltip');

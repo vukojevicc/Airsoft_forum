@@ -1336,6 +1336,7 @@ ul.linklist:after,
     width: 120px;
     background-color: black;
     color: #fff;
+    text-align: center;
     border-radius: 6px;
     padding: 5px 2px;
     position: absolute;
@@ -1422,7 +1423,5 @@ hr{
 }
 .tooltiptext div{
 /*    border-bottom: 1px solid white;*/
-    padding: 3px;
-    white-space: pre-wrap;
-    text-align: left;
+    padding: 2.5px 0;
 }
